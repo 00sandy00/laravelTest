@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\McqController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/** rout  for Question Controller*/
+Route::resource('mcq', McqController::class);
+
+/** rout  for Question Controller*/
+Route::resource('question', QuestionController::class);

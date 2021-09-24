@@ -23,7 +23,7 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'question' => Str::random(20),            
+            'question' => Str::random(20)." ?",            
         ];
     }
 }

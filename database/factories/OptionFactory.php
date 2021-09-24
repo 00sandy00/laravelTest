@@ -22,10 +22,13 @@ class OptionFactory extends Factory
      */
     public function definition()
     {
+        $enumValues = ['Y', 'N','N','N','N'];
         return [
-            'question_id' => 1,       
+            'question_id' =>  function() {
+                return factory(App\Question::class)->create()->id;
+            },       
             'option' => Str::random(10),    
-            'is_correct' => 'N',       
+            'is_correct' =>$enumValues[rand(0,4)],       
         ];
     }
 }
